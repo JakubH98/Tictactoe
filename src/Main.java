@@ -6,4 +6,9 @@ public class Main {
 
 
     }
+    public void getPlayers() {
+
+        System.out.println("Name of player 1: ");
+
+    }
 }
