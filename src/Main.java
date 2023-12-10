@@ -6,6 +6,7 @@ public class Main {
 
     public static char[][] board = {{'_', '_', '_'}, {'_', '_', '_'}, {'_', '_', '_'}};
 
+    //test
     public static void main(String[] args) {
         setPlayerNames();
         //boardet i form af et 2D array.
