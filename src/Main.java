@@ -19,16 +19,72 @@ public class Main {
     // allows the user to place a Move on the board
     private static void placeMove(String position, char symbol) {
         switch (position) {
-            case "1" -> board[0][0] = symbol;
-            case "2" -> board[0][1] = symbol;
-            case "3" -> board[0][2] = symbol;
-            case "4" -> board[1][0] = symbol;
-            case "5" -> board[1][1] = symbol;
-            case "6" -> board[1][2] = symbol;
-            case "7" -> board[2][0] = symbol;
-            case "8" -> board[2][1] = symbol;
-            case "9" -> board[2][2] = symbol;
-            default -> System.out.println("Numbers 0-9 only.");
+            case "1":
+                if (board[0][0] == '_') {
+                    board[0][0] = symbol;
+                }else {
+                    placeMove(Main.position.next(), symbol);
+                }
+                break;
+            case "2":
+                if (board[0][1] == '_') {
+                    board[0][1] = symbol;
+                }else {
+                    placeMove(Main.position.next(), symbol);
+                }
+                break;
+            case "3":
+                if (board[0][2] == '_') {
+                    board[0][2] = symbol;
+                }else {
+                    placeMove(Main.position.next(), symbol);
+                }
+                break;
+            case "4":
+                if (board[1][0] == '_') {
+                    board[1][0] = symbol;
+                }else {
+                    placeMove(Main.position.next(), symbol);
+                }
+                break;
+            case "5":
+                if (board[1][1] == '_') {
+                    board[1][1] = symbol;
+                }else {
+                    placeMove(Main.position.next(), symbol);
+                }
+                break;
+            case "6":
+                if (board[1][2] == '_') {
+                    board[1][2] = symbol;
+                }else {
+                    placeMove(Main.position.next(), symbol);
+                }
+                break;
+            case "7":
+                if (board[2][0] == '_') {
+                    board[2][0] = symbol;
+                }else {
+                    placeMove(Main.position.next(), symbol);
+                }
+                break;
+            case "8":
+                if (board[2][1] == '_') {
+                    board[2][1] = symbol;
+                }else {
+                    placeMove(Main.position.next(), symbol);
+                }
+                break;
+            case "9":
+                if (board[2][2] == '_') {
+                    board[2][2] = symbol;
+                }else {
+                    placeMove(Main.position.next(), symbol);
+                }
+                break;
+            default:
+                System.out.println("Numbers 0-9 only.");
+                break;
         }
     }
 
