@@ -3,28 +3,21 @@ import java.util.Scanner;
 public class Main {
     public static String player1;
     public static String player2;
-
+    public static Scanner position = new Scanner(System.in);
     public static char[][] board = {{'_', '_', '_'}, {'_', '_', '_'}, {'_', '_', '_'}};
 
     //test
     public static void main(String[] args) {
         setPlayerNames();
+        for (int turn = 0; turn < 6; turn++) {
+            doTurn(turn);
+        }
         //boardet i form af et 2D array.
-        printBoard(board);
+        printBoard();
 
     }
-    public static void updateBoard() {
-        int indexX;
-        int indexY;
-        Scanner input = new Scanner(System.in);
-        indexY = input.nextInt();
-        indexX = input.nextInt();
-    }
-
-
-
     // allows the user to place a Move on the board
-    private static void placeMove(char[][] board, String position, char symbol) {
+    private static void placeMove(String position, char symbol) {
         switch (position) {
             case "1" -> board[0][0] = symbol;
             case "2" -> board[0][1] = symbol;
@@ -40,7 +33,7 @@ public class Main {
     }
 
     // the board
-    private static void printBoard(char[][] board) {
+    private static void printBoard() {
         System.out.println(board[0][0] + " " +  board[0][1] + " " +  board[0][2] );
         System.out.println(board[1][0] + " " +  board[1][1] + " " +  board[1][2] );
         System.out.println(board[2][0] + " " +  board[2][1] + " " +  board[2][2] );
@@ -51,5 +44,19 @@ public class Main {
         player1 = input.next();
         System.out.println("name of player 2: ");
         player2 = input.next();
+    }
+
+    public static void doTurn(int turn) {
+        if (turn % 2 == 0) {
+            System.out.printf("%s's turn!%n",player1);
+            printBoard();
+            System.out.print("Choose position on the board: ");
+            placeMove(position.next(),'X');
+        }else {
+            System.out.printf("%s's turn!%n",player2);
+            printBoard();
+            System.out.print("Choose position on the board: ");
+            placeMove(position.next(),'O');
+        }
     }
 }
