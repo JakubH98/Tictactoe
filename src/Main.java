@@ -1,12 +1,24 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static char[][] board = {{'_', '_', '_'}, {'_', '_', '_'}, {'_', '_', '_'}};
 
     public static void main(String[] args) {
+
         //boardet i form af et 2D array.
         printBoard(board);
 
     }
+    public static void updateBoard() {
+        int indexX;
+        int indexY;
+        Scanner input = new Scanner(System.in);
+        indexY = input.nextInt();
+        indexX = input.nextInt();
+    }
+
+
 
     // allows the user to place a Move on the board
     private static void placeMove(char[][] board, String position, char symbol) {
