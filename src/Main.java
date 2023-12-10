@@ -45,7 +45,7 @@ public class Main {
         System.out.println("name of player 2: ");
         player2 = input.next();
     }
-
+    //advances the game by one turn!
     public static void doTurn(int turn) {
         if (turn % 2 == 0) {
             System.out.printf("%s's turn!%n",player1);
